@@ -1,0 +1,8 @@
+djando
+djangorestframework
+rest_framework_simplejwt
+psycopg2-binary
+python-decouple
+dj_rest_auth
+drf-yasg
+setuptools
