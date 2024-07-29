@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # inst_apps
     'rest_framework',
     'rest_framework_simplejwt',
+    'drf_yasg',
 
     #my apps
     'users',
@@ -202,4 +203,16 @@ SIMPLE_JWT = {
     "TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSerializer",
     "TOKEN_VERIFY_SERIALIZER": "rest_framework_simplejwt.serializers.TokenVerifySerializer",
     "TOKEN_BLACKLIST_SERIALIZER": "rest_framework_simplejwt.serializers.TokenBlacklistSerializer",
+}
+
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Token': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+    },
+},
+
+    'USE_SESSION_AUTH' : False
 }

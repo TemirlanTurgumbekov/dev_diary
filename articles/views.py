@@ -21,7 +21,7 @@ class ArticleListView(generics.ListAPIView):
                 models.Q(status=Article.PRIVATE, author__in=subscriptions)
             )
         return Article.objects.filter(status=Article.PUBLIC)
-
+    
 
 class ArticleCreateView(generics.CreateAPIView):
     queryset = Article.objects.all()
@@ -32,7 +32,7 @@ class ArticleCreateView(generics.CreateAPIView):
         serializer.save(author=self.request.user)
 
 
-class ArticleDetailView(generics.RetrieveUpdateDestroyAPIView):
+class ArticleView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
